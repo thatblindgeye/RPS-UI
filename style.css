@@ -30,7 +30,6 @@ html {
   padding: 5px;
   background-color: rgb(50, 50, 50);
   width: 100%;
-  height: 90vh;
   transition: all 0.5s linear;
 }
 
@@ -64,7 +63,7 @@ html {
 
 #results {
   width: 90%;
-  height: 550px;
+  height: 600px;
   border: 1px dotted rgb(50, 212, 0);
   margin-top: 10px;
   transition: all 0.5s linear;
@@ -81,9 +80,8 @@ html {
   font-family: inherit;
   background-color: rgb(75, 75, 75);
   color: rgb(50, 212, 0);
-  border: 1px dashed rgb(50, 212, 0);
+  border: 1px dotted rgb(50, 212, 0);
   font-size: 1.2em;
-  font-weight: bold;
   height: 50px;
   width: 75px;
   line-height: 1;
@@ -134,7 +132,8 @@ html {
 .user-choice:active,
 .game-btn:active {
   transform: scale(0.9);
-  background-color: rgba(75, 75, 75, 0.5);
+  border: 1px dotted rgba(50, 212, 0, 0.7);
+  background-color: rgba(75, 75, 75, 0.7);
 }
 
 @media only screen and (min-width: 400px) {
@@ -143,7 +142,7 @@ html {
   }
 
   #results {
-    height: 350px;
+    height: 400px;
   }
 
   #scoreboard {
@@ -176,7 +175,6 @@ html {
 
   .game-container {
     width: 600px;
-    height: 525px;
     border-radius: 10px;
   }
 
