@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Ultimate Duel</title>
+    <link href='https://fonts.googleapis.com/css?family=Press Start 2P' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div id="game-container" class="game-container">
+        <div id="scoreboard">
+          <div class="user-scoreboard">
+            <p class="score-label">user</p>
+            <p class="user-score">0</p>
+          </div>
+          <div class="cpu-scoreboard">
+            <p class="score-label">cpu</p>
+            <p class="cpu-score">0</p>
+          </div>
+        </div>
+        <div id="results">
+          <div class="game-type">
+            <button>Best of 3</button>
+            <button>Best of 5</button>
+            <button>Best of 7</button>
+          </div>
+          <p class="dialogue">Hello, I am RiPS 2.1.
+            <br><br>
+            Click one of the game type buttons above if you are brave enough
+            to face me in the ultimate duel: Rock, Paper, or Scissors.</p>
+        </div>
+        <div id="selections">
+          <button class="user-select rock">rock</button>
+          <button class="user-select paper">paper</button>
+          <button class="user-select scissors">scissors</button>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

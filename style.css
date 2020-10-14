@@ -1,0 +1,187 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100vh;
+  position: relative;
+  background-color: rgb(50, 50, 50);
+  color: rgb(50, 212, 0);
+  font-family: "Press Start 2P";
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  margin-top: 10px;
+  transition: all 0.5s ease;
+}
+
+.game-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 5px;
+  background-color: rgb(50, 50, 50);
+  width: 100%;
+  height: 600px;
+  transition: all 0.5s ease;
+}
+
+#scoreboard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 60px;
+}
+
+.user-scoreboard,
+.cpu-scoreboard {
+  margin: 20px;
+}
+
+.score-label {
+  text-transform: uppercase;
+  font-size: 0.8em;
+  margin-bottom: 5px;
+}
+
+.user-score,
+.cpu-score {
+  font-size: 2em;
+  text-align: center;
+}
+
+#results {
+  width: 90%;
+  height: 60%;
+  border: 1px dotted rgb(50, 212, 0);
+  margin-top: 10px;
+  transition: all 0.5s ease;
+}
+
+.game-type {
+  display: flex;
+  justify-self: flex-start;
+  justify-content: space-around;
+  margin-top: 15px;
+}
+
+.game-type button {
+  font-family: inherit;
+  background-color: rgb(75, 75, 75);
+  color: rgb(50, 212, 0);
+  border: 1px dotted rgb(50, 212, 0);
+  font-size: 0.6em;
+  height: 50px;
+  width: 75px;
+  line-height: 2;
+  padding: 0 5px;
+  transition: all 0.5s ease;
+}
+
+.game-type button:hover {
+  cursor: pointer;
+}
+
+.dialogue {
+  text-align: center;
+  margin: 10% 6% 0;
+  line-height: 1.5;
+  font-size: 0.8em;
+  line-height: 2;
+}
+
+#selections {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  align-self: flex-end;
+  width: 100%;
+  height: 160px;
+}
+
+.user-select {
+  font-family: inherit;
+  text-transform: uppercase;
+  border: 1px dotted rgb(50, 212, 0);
+  padding: 8px 5px 5px 5px;
+  font-size: 1.25em;
+  width: 90%;
+  text-align: center;
+  background-color: rgb(75, 75, 75);
+  color: rgb(50, 212, 0);
+  font-weight: bold;
+}
+
+.user-select:hover {
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+@media only screen and (min-width: 400px) {
+  #results {
+    height: 50%;
+  }
+
+  .dialogue {
+    margin: 25px 10px 0;
+  }
+
+  #selections {
+    margin-bottom: 40px;
+    height: 175px;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  html {
+    background-color: rgb(245, 245, 220);
+  }
+
+  .container {
+    margin-top: 40px;
+  }
+
+  .game-container {
+    width: 600px;
+    height: 450px;
+    border-radius: 10px;
+  }
+
+  #results {
+    height: 60%;
+    width: 506px;
+  }
+
+  .game-type button {
+    font-size: 0.7em;
+    height: initial;
+    width: initial;
+    padding: 8px;
+  }
+
+  #selections {
+    flex-direction: row;
+    height: 55px;
+    margin-bottom: 25px;
+  }
+
+  .user-select {
+    padding: 13px 10px 10px 10px;
+    font-size: 1.3em;
+    width: initial;
+  }
+}
