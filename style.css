@@ -61,7 +61,7 @@ html {
 
 #results {
   width: 90%;
-  height: 75%;
+  height: 550px;
   border: 1px dotted rgb(50, 212, 0);
   margin-top: 10px;
   transition: all 0.5s ease;
@@ -133,7 +133,7 @@ html {
 
 @media only screen and (min-width: 400px) {
   #results {
-    height: 50%;
+    height: 350px;
   }
 
   .dialogue {
@@ -152,17 +152,17 @@ html {
   }
 
   .container {
-    margin-top: 40px;
+    margin-top: 30px;
   }
 
   .game-container {
     width: 600px;
-    height: 450px;
+    height: 475px;
     border-radius: 10px;
   }
 
   #results {
-    height: 60%;
+    height: 300px;
     width: 506px;
   }
 
