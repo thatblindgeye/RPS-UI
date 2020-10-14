@@ -11,7 +11,7 @@ html {
   position: relative;
   background-color: rgb(50, 50, 50);
   color: rgb(50, 212, 0);
-  font-family: "Press Start 2P";
+  font-family: VT323;
 }
 
 .container {
@@ -20,7 +20,7 @@ html {
   align-items: flex-start;
   width: 100%;
   margin-top: 10px;
-  transition: all 0.5s ease;
+  transition: all 0.5s linear;
 }
 
 .game-container {
@@ -31,12 +31,12 @@ html {
   background-color: rgb(50, 50, 50);
   width: 100%;
   height: 600px;
-  transition: all 0.5s ease;
+  transition: all 0.5s linear;
 }
 
 #scoreboard {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   width: 100%;
   height: 60px;
@@ -44,19 +44,22 @@ html {
 
 .user-scoreboard,
 .cpu-scoreboard {
-  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 20px;
 }
 
 .score-label {
   text-transform: uppercase;
-  font-size: 0.8em;
-  margin-bottom: 5px;
+  font-size: 1.2em;
 }
 
 .user-score,
 .cpu-score {
-  font-size: 2em;
+  font-size: 3em;
   text-align: center;
+  margin-top: -10px;
 }
 
 #results {
@@ -64,38 +67,39 @@ html {
   height: 550px;
   border: 1px dotted rgb(50, 212, 0);
   margin-top: 10px;
-  transition: all 0.5s ease;
+  transition: all 0.5s linear;
 }
 
 .game-type {
   display: flex;
-  justify-self: flex-start;
+  align-items: center;
   justify-content: space-around;
   margin-top: 15px;
 }
 
-.game-type button {
+.game-btn {
   font-family: inherit;
   background-color: rgb(75, 75, 75);
   color: rgb(50, 212, 0);
-  border: 1px dotted rgb(50, 212, 0);
-  font-size: 0.6em;
+  border: 1px dashed rgb(50, 212, 0);
+  font-size: 1.2em;
+  font-weight: bold;
   height: 50px;
   width: 75px;
-  line-height: 2;
+  line-height: 1;
   padding: 0 5px;
-  transition: all 0.5s ease;
+  transition: all 0.08s linear;
 }
 
-.game-type button:hover {
+.game-btn:hover {
   cursor: pointer;
 }
 
-.dialogue {
-  text-align: center;
-  margin: 10% 6% 0;
+#dialogue {
+  text-align: justify;
+  margin: 5% 6% 0;
   line-height: 1.5;
-  font-size: 0.8em;
+  font-size: 1.2em;
   line-height: 2;
 }
 
@@ -110,25 +114,28 @@ html {
   height: 160px;
 }
 
-.user-select {
+.user-choice {
   font-family: inherit;
   text-transform: uppercase;
   border: 1px dotted rgb(50, 212, 0);
-  padding: 8px 5px 5px 5px;
-  font-size: 1.25em;
+  font-size: 2em;
   width: 90%;
   text-align: center;
   background-color: rgb(75, 75, 75);
   color: rgb(50, 212, 0);
   font-weight: bold;
+  transition: all 0.05s linear;
 }
 
-.user-select:hover {
+.user-choice:hover {
   cursor: pointer;
 }
 
-.hidden {
-  display: none;
+.btn-press,
+.user-choice:active,
+.game-btn:active {
+  transform: scale(0.9);
+  background-color: rgba(75, 75, 75, 0.5);
 }
 
 @media only screen and (min-width: 400px) {
@@ -136,7 +143,16 @@ html {
     height: 350px;
   }
 
-  .dialogue {
+  #scoreboard {
+    justify-content: center;
+  }
+
+  .user-scoreboard,
+  .cpu-scoreboard {
+    margin: 0 50px;
+  }
+
+  #dialogue {
     margin: 25px 10px 0;
   }
 
@@ -161,13 +177,18 @@ html {
     border-radius: 10px;
   }
 
+  .user-scoreboard,
+  .cpu-scoreboard {
+    margin: 0 75px;
+  }
+
   #results {
     height: 325px;
     width: 506px;
   }
 
-  .game-type button {
-    font-size: 0.7em;
+  .game-btn {
+    font-size: 1.5em;
     height: initial;
     width: initial;
     padding: 8px;
@@ -179,9 +200,9 @@ html {
     margin-bottom: 5px;
   }
 
-  .user-select {
-    padding: 13px 10px 10px 10px;
-    font-size: 1.3em;
+  .user-choice {
+    font-size: 2.25em;
+    padding: 0 26px;
     width: initial;
   }
 }

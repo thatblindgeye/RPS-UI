@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The Ultimate Duel</title>
-    <link href='https://fonts.googleapis.com/css?family=Press Start 2P' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=VT323' rel='stylesheet'>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -22,19 +22,19 @@
         </div>
         <div id="results">
           <div class="game-type">
-            <button>Best of 3</button>
-            <button>Best of 5</button>
-            <button>Best of 7</button>
+            <button class="game-btn" data-rounds="3">Best of 3</button>
+            <button class="game-btn" data-rounds="5">Best of 5</button>
+            <button class="game-btn" data-rounds="7">Best of 7</button>
           </div>
-          <p class="dialogue">Hello, I am RiPS 2.1.
+          <p id="dialogue">Hello, I am RiPS 2.1.
             <br><br>
-            Click one of the game type buttons above if you are brave enough
+            Click one of the game settings above if you are brave enough
             to face me in the ultimate duel: Rock, Paper, or Scissors.</p>
         </div>
         <div id="selections">
-          <button class="user-select rock">rock</button>
-          <button class="user-select paper">paper</button>
-          <button class="user-select scissors">scissors</button>
+          <button id="rock" class="user-choice">rock</button>
+          <button id="paper" class="user-choice">paper</button>
+          <button id="scissors" class="user-choice">scissors</button>
         </div>
       </div>
     </div>
