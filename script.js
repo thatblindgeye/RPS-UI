@@ -1,20 +1,5 @@
 "use strict";
 
-/* could object literal or module pattern be used here?
-let namespace = (function () {
-  let userScore = 0;
-  let cpuScore = 0;
-  let winningScore;
-  let timeout;
-  return {
-    userScore: userScore,
-    cpuScore: cpuScore,
-    winningScore: winningScore,
-    timeout: timeout
-  };
-}());
-*/
-
 let userScore = 0;
 let cpuScore = 0;
 let winningScore;
@@ -22,6 +7,12 @@ let timeout;
 const gameChoice = document.querySelectorAll(".game-btn");
 const dialogue = document.querySelector("#dialogue");
 const userChoice = document.querySelectorAll(".user-choice");
+
+
+window.addEventListener("load", () => {
+  timeout = setTimeout(() => {dialogue.textContent = `Hello. I am the Retro Play System, or RPS for short.\r\n\nClick a game mode above if you are brave enough to face me in the ultimate duel.`;
+    }, 2000);
+})
 
 
 function resetGame() {
