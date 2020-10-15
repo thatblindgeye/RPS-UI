@@ -1,9 +1,26 @@
+"use strict";
+
+/* could object literal or module pattern be used here?
+let namespace = (function () {
+  let userScore = 0;
+  let cpuScore = 0;
+  let winningScore;
+  let timeout;
+  return {
+    userScore: userScore,
+    cpuScore: cpuScore,
+    winningScore: winningScore,
+    timeout: timeout
+  };
+}());
+*/
+
 let userScore = 0;
 let cpuScore = 0;
 let winningScore;
-const gameChoice = document.querySelectorAll(".game-btn");
 let timeout;
-let dialogue = document.querySelector("#dialogue");
+const gameChoice = document.querySelectorAll(".game-btn");
+const dialogue = document.querySelector("#dialogue");
 const userChoice = document.querySelectorAll(".user-choice");
 
 
@@ -17,7 +34,7 @@ function chooseGame(e) {
   resetGame();
   clearTimeout(timeout);
 
-  dialogue.textContent = `So you think you can defeat me ${e.target.dataset.rounds} times? I will enjoy the... "challenge". Click a choice below to begin the game.`;
+  dialogue.textContent = `So you think you can win ${e.target.dataset.rounds} rounds before me? I will enjoy the... "challenge". Click a choice below to begin the game.`;
 
   winningScore = Number(e.target.dataset.rounds);
   e.target.classList.add("btn-press");
@@ -42,20 +59,9 @@ function selectComputer() {
   return randomChoice[Math.floor(Math.random() * randomChoice.length)];
 }
 
-/* Below redundant while using :active in CSS?
-
-function pressButton(event) {
-  event.target.classList.add("btn-press");
-}
-
-function unpressButton(event) {
-  if (event.propertyName !== 'transform') return;
-  event.target.classList.remove('btn-press');
-} */
-
-function playRound(event) {
+function playRound(e) {
   let cpuSelection = selectComputer();
-  let userSelection = event.target.id;
+  let userSelection = e.target.id;
   
   if (userSelection === cpuSelection) {
     dialogue.textContent = `It would seem we both chose ${userSelection}.`;
@@ -77,35 +83,19 @@ function playRound(event) {
 
 function checkWinner() {
   if (userScore === winningScore) {
-    dialogue.textContent = `WARNING: UNAUTHORIZED ACCESS TO MAINFRAME!`;
+    dialogue.textContent = `WARNING: HACK DETECTED FROM UNAUTHORIZED LOGIN!`;
 
-    timeout = setTimeout(() => {dialogue.textContent = "Of course humans have to resort to cheating. Congratulations on your hollow victory. Click a game setting above for a rematch, maybe without cheating this time...";
+    timeout = setTimeout(() => {dialogue.textContent = "Of course that's how you won... Congratulations on your hollow victory. If you want a rematch—without cheating—then click a game mode above.";
     }, 3000);
   } else if (cpuScore === winningScore) {
-      dialogue.textContent = `Naturally it was easy to defeat you. Maybe you'll do better next time, not that I would count on it. Though if you really want to find out, then click a game setting above for a rematch.`;
+      dialogue.textContent = `Defeating you was inevitable. Not that I would expect you to do any better, but if you want a rematch then click a game mode above.`;
   }
 }
 
-/* Below redundant while using :active in CSS?
-
 userChoice.forEach((userChoice) => {
-  userChoice.addEventListener("mousedown", (event) => {
+  userChoice.addEventListener("click", (e) => {
     if (userScore < winningScore && cpuScore < winningScore) {
-      pressButton(event);
-    }
-  })
-});
-
-userChoice.forEach((userChoice) => {
-  userChoice.addEventListener("transitionend", (event) => {
-    unpressButton(event);
-  })
-}); */
-
-userChoice.forEach((userChoice) => {
-  userChoice.addEventListener("click", (event) => {
-    if (userScore < winningScore && cpuScore < winningScore) {
-      playRound(event);
+      playRound(e);
     }
   })
 });
